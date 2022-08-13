@@ -20,7 +20,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
     "lint-fix": "eslint ./src --fix",
-    "format": "prettier --write ./src/**/*.js",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },

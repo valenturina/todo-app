@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { formatDistanceToNow } from "date-fns";
 
-import NewTaskForm from '../new-task-form';
-import TaskList from '../task-list';
-import Footer from '../footer';
+import NewTaskForm from "../new-task-form";
+import TaskList from "../task-list";
+import Footer from "../footer";
 
 export default class App extends Component {
-  createTaskItem(label) {
+  createTaskItem(label, min = 0, sec = 0) {
     return {
       id: Math.floor(Math.random() * 1000000),
       label: label,
       active: true,
       edit: false,
+      minutes: min,
+      seconds: sec,
+      timeCreated: `created ${formatDistanceToNow(new Date())}`,
     };
   }
 
   state = {
     taskData: [
-      this.createTaskItem('completed task'),
-      this.createTaskItem('editing task'),
-      this.createTaskItem('active task'),
-      this.createTaskItem('another active task'),
-      this.createTaskItem('active task'),
+      this.createTaskItem("completed task"),
+      this.createTaskItem("editing task"),
+      this.createTaskItem("active task"),
+      this.createTaskItem("another active task"),
+      this.createTaskItem("active task"),
     ],
-    filter: 'all',
+    filter: "all",
   };
 
   deleteTask = (id) => {
@@ -72,11 +76,11 @@ export default class App extends Component {
 
   filter(items, filter) {
     switch (filter) {
-      case 'all':
+      case "all":
         return items;
-      case 'active':
+      case "active":
         return items.filter((item) => item.active);
-      case 'done':
+      case "done":
         return items.filter((item) => !item.active);
       default:
         return items;

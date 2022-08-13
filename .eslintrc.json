@@ -14,9 +14,8 @@
     "plugin:react/jsx-runtime",
     "prettier"
   ],
-  
+
   "parserOptions": {
-    "parser": "babel-eslint",
     "ecmaFeatures": {
       "jsx": true
     },
@@ -28,7 +27,6 @@
     "no-unused-vars":"off",
     "indent": 0,
     "linebreak-style": [0, "unix"],
-    "quotes": ["error", "single"],
     "semi": 0,
     "react/react-in-jsx-scope": "off",
     "react/prop-types": 0,
