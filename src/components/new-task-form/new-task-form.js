@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export default class NewTaskForm extends React.Component {
   state = {
-    label: '',
+    label: "",
   };
   onSubmit = (e) => {
     e.preventDefault();
     this.props.onAddTask(this.state.label);
     this.setState({
-      label: '',
+      label: "",
     });
   };
   onInputChange = (e) => {
