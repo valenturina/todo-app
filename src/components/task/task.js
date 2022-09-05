@@ -60,7 +60,7 @@ const Task = ({label, minutes, seconds, onDeleted, onToggleDone, active, edit, o
         )
     } else {
         return (
-            <form onSubmit={this.onEditSubmit}>
+            <form onSubmit={onEditSubmit}>
                 <input type="text" className="edit" value={label} onChange={onEditChange} />
             </form>
         )
